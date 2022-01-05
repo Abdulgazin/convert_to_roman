@@ -1,44 +1,43 @@
 package RomanNumber;
 
 import java.util.Scanner;
-import java.util.TreeMap;
 
-class RomanNumber {
-    private final static TreeMap<Integer, String> map = new TreeMap<Integer, String>();
-    static {
-        map.put(1000, "M");
-        map.put(900, "CM");
-        map.put(500, "D");
-        map.put(400, "CD");
-        map.put(100, "C");
-        map.put(90, "XC");
-        map.put(50, "L");
-        map.put(40, "XL");
-        map.put(10, "X");
-        map.put(9, "IX");
-        map.put(5, "V");
-        map.put(4, "IV");
-        map.put(1, "I");
-    }
-    public final static String toRoman(int num) {
-        int l = map.floorKey(num);
-        if (num == l) {
-            return map.get(num);
-        }
-        return map.get(l) + toRoman(num - l);
-    }
-}
+//class RomanNumber {
+  //  private final static TreeMap<Integer, String> map = new TreeMap<Integer, String>();
+    //static {
+      //  map.put(1000, "M");
+        //map.put(900, "CM");
+//        map.put(500, "D");
+   //     map.put(400, "CD");
+     //   map.put(100, "C");
+       // map.put(90, "XC");
+//        map.put(50, "L");
+  //      map.put(40, "XL");
+    //    map.put(10, "X");
+      //  map.put(9, "IX");
+        //map.put(5, "V");
+//        map.put(4, "IV");
+  //      map.put(1, "I");
+    //}
+//    public final static String toRoman(int num) {
+  //      int l = map.floorKey(num);
+    //    if (num == l) {
+      //      return map.get(num);
+//        }
+  //      return map.get(l) + toRoman(num - l);
+    //}
+//}
     public class Calculator {
         static Scanner scanner = new Scanner(System.in);
         private static Object String;
 
         public static void main(String[] args) {
-            String value1;
-            String value2;
-            //int num1 = getInt();
-            //int num2 = getInt();
-            int num1 = toArabic(value1);
-            int num2 = toArabic(value2);
+            //String number1 = "1";
+            //String number2 = "1";
+            String num1 = getLine();
+            String num2 = getLine();
+            //int num1 = toArabic();
+            //int num2 = toArabic();
             char operation = getOperation();
             int result = calc(num1, num2, operation);
             System.out.println("Результат операции: " + result);
@@ -67,10 +66,11 @@ class RomanNumber {
             if (value.equals("VIII")) return 8;
             if (value.equals("IX")) return 9;
             if (value.equals("X")) return 10;
+            return 0;
         }
 
 
-        //private class RomanToArabic {
+    //private class RomanToArabic {
           //  static int value(char a) {
             //    if (a=='M') return 1000;
               //  else if (a=='D') return 500;
@@ -113,8 +113,8 @@ class RomanNumber {
             }
             return operation;
         }
-        public static int calc(int num1, int num2, char operation) {
-            int result;
+        public static int calc(java.lang.String num1, java.lang.String num2, char operation) {
+            String result;
             switch (operation) {
                 case '+':
                     result = num1 + num2;
