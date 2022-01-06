@@ -34,8 +34,8 @@ import java.util.Scanner;
         public static void main(String[] args) {
             //String number1 = "1";
             //String number2 = "1";
-            String num1 = getLine();
-            String num2 = getLine();
+            int num1 = Integer.parseInt(getLine());
+            int num2 = Integer.parseInt(getLine());
             //int num1 = toArabic();
             //int num2 = toArabic();
             char operation = getOperation();
@@ -45,7 +45,7 @@ import java.util.Scanner;
 
         public static boolean isNumeric(String strNum) {
             try {
-                double d = Integer.parseInt(strNum);
+                int d = Integer.parseInt(strNum);
             } catch (NumberFormatException nfe) {
                 return false;
             }
@@ -68,8 +68,6 @@ import java.util.Scanner;
             if (value.equals("X")) return 10;
             return 0;
         }
-
-
     //private class RomanToArabic {
           //  static int value(char a) {
             //    if (a=='M') return 1000;
@@ -88,9 +86,9 @@ import java.util.Scanner;
                 //else if (a=='I') return 1;
                 //else return 0;
             //}
-        private static String getLine() {
+        private static java.lang.String getLine() {
             System.out.print("Введите число:");
-            String num;
+            java.lang.String num;
             if (scanner.hasNextLine()) {
                 num = scanner.nextLine();
             }
@@ -113,8 +111,8 @@ import java.util.Scanner;
             }
             return operation;
         }
-        public static int calc(java.lang.String num1, java.lang.String num2, char operation) {
-            String result;
+        public static int calc(int num1, int num2, char operation) {
+            int result;
             switch (operation) {
                 case '+':
                     result = num1 + num2;
