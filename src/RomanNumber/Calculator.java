@@ -1,41 +1,43 @@
 package RomanNumber;
 
 import java.util.Scanner;
+import java.util.TreeMap;
 
-//class RomanNumber {
-  //  private final static TreeMap<Integer, String> map = new TreeMap<Integer, String>();
-    //static {
-      //  map.put(1000, "M");
-        //map.put(900, "CM");
-//        map.put(500, "D");
-   //     map.put(400, "CD");
-     //   map.put(100, "C");
-       // map.put(90, "XC");
-//        map.put(50, "L");
-  //      map.put(40, "XL");
-    //    map.put(10, "X");
-      //  map.put(9, "IX");
-        //map.put(5, "V");
-//        map.put(4, "IV");
-  //      map.put(1, "I");
-    //}
-//    public final static String toRoman(int num) {
-  //      int l = map.floorKey(num);
-    //    if (num == l) {
-      //      return map.get(num);
-//        }
-  //      return map.get(l) + toRoman(num - l);
-    //}
-//}
-    public class Calculator {
+public class Calculator {
     static Scanner scanner = new Scanner(System.in);
     private static Object String;
+    private final static TreeMap<Integer, String> map = new TreeMap<Integer, String>();
+
+    static {
+        map.put(1000, "M");
+        map.put(900, "CM");
+        map.put(500, "D");
+        map.put(400, "CD");
+        map.put(100, "C");
+        map.put(90, "XC");
+        map.put(50, "L");
+        map.put(40, "XL");
+        map.put(10, "X");
+        map.put(9, "IX");
+        map.put(5, "V");
+        map.put(4, "IV");
+        map.put(1, "I");
+    }
+
+    public final static java.lang.String toRoman(int num) {
+        int l = map.floorKey(num);
+        if (num == l) {
+            var s = map.get(num);
+            return s;
+        }
+        return map.get(l) + toRoman(num - l);
+    }
 
     public static void main(String[] args) {
-        int num1 = Integer.parseInt(RomanToArabic.getLine());
-        int num2 = Integer.parseInt(RomanToArabic.getLine());
-        char operation = RomanToArabic.getOperation();
-        int result = RomanToArabic.calc(num1, num2, operation);
+        int num1 = Integer.parseInt(getLine());
+        int num2 = Integer.parseInt(getLine());
+        char operation = getOperation();
+        int result = calc(num1, num2, operation);
         System.out.println("Результат операции: " + result);
     }
 
@@ -58,8 +60,6 @@ import java.util.Scanner;
         }
         return parseInt(strNum);
     }
-//int num1 = toArabic(value1);
-//int num2 = toArabic(value2);
 
     //        public static int toArabic(String value) {
     //          if (value.equals("I")) return 1;
@@ -74,24 +74,24 @@ import java.util.Scanner;
 //            if (value.equals("X")) return 10;
     //      return 0;
     //    }
-    private class RomanToArabic {
-        static int value(String a) {
-            if (a == "M") return 1000;
-            else if (a == "D") return 500;
-            else if (a == "C") return 100;
-            else if (a == "L") return 50;
-            else if (a == "X") return 10;
-            else if (a == "IX") return 9;
-            else if (a == "VIII") return 8;
-            else if (a == "VII") return 7;
-            else if (a == "VI") return 6;
-            else if (a == "V") return 5;
-            else if (a == "IV") return 4;
-            else if (a == "III") return 3;
-            else if (a == "II") return 9;
-            else if (a == "I") return 1;
-            else return 0;
-        }
+//    private class RomanToArabic {
+//        static int value(String a) {
+//            if (a == "M") return 1000;
+//            else if (a == "D") return 500;
+//            else if (a == "C") return 100;
+//            else if (a == "L") return 50;
+//            else if (a == "X") return 10;
+//            else if (a == "IX") return 9;
+//            else if (a == "VIII") return 8;
+//            else if (a == "VII") return 7;
+//            else if (a == "VI") return 6;
+//            else if (a == "V") return 5;
+//            else if (a == "IV") return 4;
+//            else if (a == "III") return 3;
+//            else if (a == "II") return 9;
+//            else if (a == "I") return 1;
+//            else return 0;
+//        }
 
         private static java.lang.String getLine() {
             System.out.print("Введите число:");
@@ -140,5 +140,5 @@ import java.util.Scanner;
             }
             return result;
         }
-    }
 }
+
